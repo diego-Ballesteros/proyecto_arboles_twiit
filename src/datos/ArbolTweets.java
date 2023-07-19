@@ -185,6 +185,8 @@ public static void main(String[] args) {
         
        ArbolTweets ob=new ArbolTweets();
        
+       System.out.println("solo quiero modificar algo y ya ");
+       
        //istanciando tweets
        Tweet t1 = new Tweet(1,"diego","hola");
        Tweet t2 = new Tweet(11,"marta","covid");
