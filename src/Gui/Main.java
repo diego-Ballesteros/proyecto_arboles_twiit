@@ -28,7 +28,7 @@ public class Main {
        Tweet t5 = new Tweet(4,"diego","hola");
        Tweet t6 = new Tweet(3,"jenn","covid");
        Tweet t7 = new Tweet(15,"yuli","hola");
-       Tweet t8 = new Tweet(17,"andre","covid");
+       Tweet t10 = new Tweet(17,"andre","covid");
        
       //insertando tweets
        ob.insertar(t1);
@@ -38,7 +38,7 @@ public class Main {
        ob.insertar(t5);
        ob.insertar(t6);
        ob.insertar(t7);
-       ob.insertar(t8);
+       ob.insertar(t10);
        
        System.out.println("Mostrando tweets ordenados por codigo");
        ob.inorden(ob.getRaiz());
