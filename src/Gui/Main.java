@@ -18,7 +18,7 @@ public class Main {
         
        ArbolTweets ob=new ArbolTweets();
        
-       System.out.println("solo quiero modificar algo y ya ahora desde git hub");
+       System.out.println("solo quiero modificar algo y ya ahora desde git hub 2.0");
        
        //istanciando tweets
        Tweet t1 = new Tweet(1,"diego","hola");
