@@ -39,7 +39,6 @@ public class Main {
            
         switch (op) {
             case 1:
-                
                 System.out.println("\n  || Agregando Tweet || \n digite los siguientes datos: \n");
                 System.out.println(" Digite el codigo del Tweet: ");
                 int codigo = entrada.nextInt();
@@ -51,14 +50,10 @@ public class Main {
                 Tweet tweet = new Tweet(codigo, usuario, contenido);
                 arbolTweet.insertar(tweet);
                 
-            
-                
                 System.out.println("\n Tweet agregado con exito! ");
-                
                 break;
             case 2:
-                
-                    Tweet t1 = new Tweet(1,"diego","hola");
+                Tweet t1 = new Tweet(1,"diego","hola");
                 Tweet t2 = new Tweet(11,"marta","covid");
                 Tweet t3 = new Tweet(21,"diego","viva");
                 Tweet t4 = new Tweet(8,"gabriel","covid");
@@ -67,7 +62,6 @@ public class Main {
                 Tweet t7 = new Tweet(15,"yuli","hola");
                 Tweet t8 = new Tweet(17,"andre","covid");
 
-               //insertando tweets
                 arbolTweet.insertar(t1);
                 arbolTweet.insertar(t2);
                 arbolTweet.insertar(t3);
@@ -76,21 +70,15 @@ public class Main {
                 arbolTweet.insertar(t6);
                 arbolTweet.insertar(t7);
                 arbolTweet.insertar(t8);
-                
-                
-
-                break;
-                
+                break;              
             case 3:
                  System.out.println(" Mostrando tweets ordenados por codigo");
-                 arbolTweet.inorden(arbolTweet.getRaiz());
-                
+                 arbolTweet.inorden(arbolTweet.getRaiz());     
                 break;
             case 4:
                 System.out.println("\nMostrando el Tweet menor");
                 Tweet tw = arbolTweet.menorCodigo();
                 System.out.println(" El tweet con menor codigo es: "+tw.toString());
-                
                 break;
             case 5:
                 System.out.println("\nbuscando tweet por codigo");
@@ -103,19 +91,16 @@ public class Main {
                 }else{
                     System.out.println("teewt No encontrado");
                 }
-                
                 break;
             case 6:
                 System.out.println("\nEliminando tweet por codigo");
                 System.out.print("Ingrese el codigo del tweet a eliminar: ");
                 id = entrada.nextInt();
                 arbolTweet.eliminar(id);
-                
                 break;
             case 7:
                 System.out.println("\n Eliminando tweets con palabra covid");
                 arbolTweet.buscarContenido(arbolTweet.getRaiz(), "covid");
-                
                 break;
             case 0:
                 System.out.println("|| Gracias por usar el programa ||");
