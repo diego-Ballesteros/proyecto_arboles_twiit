@@ -80,12 +80,13 @@ public class Main {
 //        arbolTweet.inorden(arbolTweet.getRaiz());
    
   
-        String men= "\n1.Agregar tweet "
-                    + "\n2.Mostrar twwets en orden por codigo "
-                    + "\n3.Mostrar tweet menor"
-                    + "\n4.Buscar tweet por codigo"
-                    + "\n5.Eliminar tweet por codigo"
-                    + "\n6.Eliminar todos los tweet con palabra covid"
+        String men= "\n1.Agregar tweet manualmente "
+                    + "\n2. Agregar tweet predeterminados "
+                    + "\n3.Mostrar twwets en orden por codigo "
+                    + "\n4.Mostrar tweet menor"
+                    + "\n5.Buscar tweet por codigo"
+                    + "\n6.Eliminar tweet por codigo"
+                    + "\n7.Eliminar todos los tweet con palabra covid"
                      + "\n0. Salir"
                      + "\n Elija su opcion --> ";
   
@@ -93,34 +94,90 @@ public class Main {
         
         System.out.println(men);
         int op = entrada.nextInt();
+        int id;
            
         switch (op) {
             case 1:
                 
-                System.out.println("\n  || Agregando Tweet || \n digite los siguientes datos: \n");
-                System.out.println(" Digite el codigo del Tweet: ");
-                int codigo = entrada.nextInt();
-                System.out.println(" Digite el usuario del Tweet: ");
-                String usuario = entrada.next();
-                System.out.println("Digite el contenido del tweet (maximo 225 caracteres)");
-                String contenido = entrada.next();
+//                System.out.println("\n  || Agregando Tweet || \n digite los siguientes datos: \n");
+//                System.out.println(" Digite el codigo del Tweet: ");
+//                int codigo = entrada.nextInt();
+//                System.out.println(" Digite el usuario del Tweet: ");
+//                String usuario = entrada.next();
+//                System.out.println("Digite el contenido del tweet (maximo 225 caracteres)");
+//                String contenido = entrada.next();
+//                
+//                Tweet tweet = new Tweet(codigo, usuario, contenido);
+//                arbolTweet.insertar(tweet);
                 
-                Tweet tweet = new Tweet(codigo, usuario, contenido);
-                arbolTweet.insertar(tweet);
+            
                 
                 System.out.println("\n Tweet agregado con exito! ");
                 
                 break;
             case 2:
                 
-                 System.out.println(" Mostrando tweets ordenados por codigo");
-                 arbolTweet.inorden(arbolTweet.getRaiz());
+                    Tweet t1 = new Tweet(1,"diego","hola");
+                Tweet t2 = new Tweet(11,"marta","covid");
+                Tweet t3 = new Tweet(21,"diego","viva");
+                Tweet t4 = new Tweet(8,"gabriel","covid");
+                Tweet t5 = new Tweet(4,"diego","hola");
+                Tweet t6 = new Tweet(3,"jenn","covid");
+                Tweet t7 = new Tweet(15,"yuli","hola");
+                Tweet t8 = new Tweet(17,"andre","covid");
+
+               //insertando tweets
+                arbolTweet.insertar(t1);
+                arbolTweet.insertar(t2);
+                arbolTweet.insertar(t3);
+                arbolTweet.insertar(t4);
+                arbolTweet.insertar(t5);
+                arbolTweet.insertar(t6);
+                arbolTweet.insertar(t7);
+                arbolTweet.insertar(t8);
+                
+                
 
                 break;
+                
             case 3:
+                 System.out.println(" Mostrando tweets ordenados por codigo");
+                 arbolTweet.inorden(arbolTweet.getRaiz());
+                
+                break;
+            case 4:
+                System.out.println("\nMostrando el Tweet menor");
+                Tweet tw = arbolTweet.menorCodigo();
+                System.out.println(" El tweet con menor codigo es: "+tw.toString());
+                
+                break;
+            case 5:
+                System.out.println("\nbuscando tweet por codigo");
+                System.out.print("Ingrese el codigo del tweet a buscar: ");
+                id = entrada.nextInt();
+                tw = arbolTweet.buscarPorCodigo(id);
+                if(tw != null){
+                    System.out.println(" Tweet Encontrado! sus datos son: ");
+                    System.out.println(" "+tw.toString());
+                }else{
+                    System.out.println("teewt No encontrado");
+                }
+                
+                break;
+            case 6:
+                System.out.println("\nEliminando tweet por codigo");
+                System.out.print("Ingrese el codigo del tweet a eliminar: ");
+                id = entrada.nextInt();
+                arbolTweet.eliminar(id);
+                
+                break;
+            case 7:
+                System.out.println("\n Eliminando tweets con palabra covid");
+                arbolTweet.buscarContenido(arbolTweet.getRaiz(), "covid");
                 
                 break;
             case 0:
+                System.out.println("|| Gracias por usar el programa ||");
                 break fin;
             default:
                throw new AssertionError();
