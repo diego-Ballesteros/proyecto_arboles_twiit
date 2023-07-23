@@ -6,7 +6,6 @@ package Gui;
 
 import datos.ArbolTweets;
 import datos.Tweet;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
