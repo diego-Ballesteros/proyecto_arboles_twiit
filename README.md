@@ -1,5 +1,7 @@
 ### Gestion de tweets con estructura de datos de Arbol binario
 
+![](https://hhmosquera.files.wordpress.com/2014/05/arbol1.png)
+
 El programa debe gestionar:
 
 - Insertar un nuevo Tweet
